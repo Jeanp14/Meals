@@ -5,6 +5,7 @@ import { CATEGORIES, MEALS } from "../data/dummyData";
 import MealItem from "../components/MealItem";
 import Category from '../models/category';
 import Meal from '../models/meal';
+import MealsList from '../components/MealsList';
 //import Category from "../models/category";
 
 const MealsOverviewScreen = ({route, navigation}: any) => {
@@ -24,7 +25,9 @@ const MealsOverviewScreen = ({route, navigation}: any) => {
         });
     }, [catId, navigation]);
 
-    const renderMealItem = (itemData: any) => {
+    return <MealsList items={displayedMeals}/>
+
+    /* const renderMealItem = (itemData: any) => {
 
         const item: Meal = itemData.item;
 
@@ -52,14 +55,14 @@ const MealsOverviewScreen = ({route, navigation}: any) => {
                 renderItem={renderMealItem}
             />
         </View>
-    );
+    ); */
 }
 
-const styles = StyleSheet.create({
+/* const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 16
     }
-});
+}); */
 
 export default MealsOverviewScreen;
